@@ -11,8 +11,7 @@ import {
   X, 
   Smartphone, 
   Info,
-  RefreshCw,
-  Shield
+  RefreshCw
 } from 'lucide-react';
 import SafeImage from '../components/SafeImage';
 import { auth, db, resolvedFirebaseConfig } from '../lib/firebase';
@@ -594,19 +593,7 @@ export default function Auth({ onLogin }: AuthProps) {
                     />
                     {errors.password && <span className="text-[8px] text-rose-500 font-bold uppercase tracking-widest ml-1">{errors.password}</span>}
                   </div>
-                  <div className="flex items-center justify-between pt-1">
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setEmail(DEFAULT_ADMIN_CREDENTIALS.email);
-                        setPassword(DEFAULT_ADMIN_CREDENTIALS.password);
-                        setErrors({});
-                      }}
-                      className="text-[9px] font-black uppercase tracking-widest text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-1"
-                    >
-                      <Shield size={11} />
-                      Admin Login
-                    </button>
+                  <div className="flex items-center justify-end pt-1">
                     <button
                       type="button"
                       onClick={handleForgotPassword}
